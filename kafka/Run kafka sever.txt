@@ -1,0 +1,47 @@
+=======#Run kafka server=======
+#cd to the directory of kafka
+=======#start zoo keeper=======
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+=======#start kafka server=======
+bin/kafka-server-start.sh config/server.properties
+neu de lau qua khong chay duoc thi xoa thu muc /Users/nguyentadinhduy/kafka_2.12-3.5.2/data/kafka-logs/ nay truoc 
+ 
+=======#create kafka topic =======
+
+bin/kafka-topics.sh --create --bootstrap-server 192.168.64.1:9092 --replication-factor 1 --partitions 1 --topic test5
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test1
+ 
+=======#create kafka producer =======
+bin/kafka-console-producer.sh --broker-list 192.168.64.1:9092 --topic test5
+
+=======#create kafka consumer=======
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test1 --from-beginning
+
+bin/kafka-console-consumer.sh --bootstrap-server 192.168.64.1:9092 --topic test5 --from-beginning
+bin/kafka-console-consumer.sh --bootstrap-server 192.168.64.1:9092 --topic test2 --from-beginning
+
+
+=======Current ETL flow start sink connector :=======
+bin/connect-standalone.sh config/connect-standalone.properties config/jdbc-sink-connector.properties  
+
+
+Read data from Cassandra & MySQL => ETL to Final Output => Write Output to MySQL 
+
+=======Using Kafka : =======
+
+Read data from Cassandra & MySQL => ETL to Final Output => Write output to Kafka => Use spark streaming to read output from Kafka => Write output to MySQL
+import os
+os.environ['PYSPARK_SUBMIT_ARGS'] = '--packages org.apache.spark:spark-streaming-kafka_2.12-3.5.2:3.2.0,org.apache.spark:spark-sql-kafka_2.12-3.5.2:3.2.0 pyspark-shell'
+
+======= add nhung file nay vao jars cua spark de ket noi spark to cassandra=====
+
+org.apache.kafka:kafka-clients:jar:3.5.0
+org.apache.spark:spark-streaming-kafka-0-10-assembly_2.12:jar:3.5.0
+org.apache.commons:commons-pool2:jar:2.12.0
+org.apache.spark:spark-token-provider-kafka-0-10_2.12:jar:3.5.0
+spark-sql-kafka-0-10_2.12-3.5.0.jar
+
+
+========delete topic========
+bin/kafka-topics.sh --bootstrap-server 192.168.64.1:9092 --delete --topic test5
