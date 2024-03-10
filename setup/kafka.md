@@ -20,4 +20,4 @@
 
 ### **Start kafka sink-connector**
 
-`bin/connect-standalone.sh config/connect-standalone.properties config/jdbc-sink-connector.properties`
+`bin/connect-standalone.sh config/connect-standalone.properties config/cassandra-sink-connector.properties`
