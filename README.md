@@ -1,12 +1,12 @@
 # **Objective**
 
-This project is about creating a system to handle and make sense of the activity records from a job recruitment platform. The main aim is to keep, work on, and study these records to help the company decide what to do next. It utilizes Cassandra to organize incoming data. Subsequently, PySpark processes this raw data, makes changes, and stores it in Kafka. Then, a Kafka connector is used to push this data to MySQL for future use. Grafana is employed to create charts and graphs based on the data. The entire project is configured with Docker, facilitating the startup and operation of the system.
+This project is about creating a system to handle and make sense of the activity records from a job recruitment platform. The main aim is to keep, work on, and study these records to help the company decide what to do next. It uses Kafka to organize incoming data and sends this untouched data to Cassandra, which is like a big storage space. Then, PySpark takes this data, changes it, and puts it into MySQL, where it is kept for future use. We use Grafana to make charts and graphs of the data. The whole project is set up with Docker, which makes it easier to start and run the system.
 
 - Tech stack: PySpark, Kafka, Docker, Cassandra, MySQL, Grafana, Python.
 
 # **Architecture**
 
-![Architecture](https://github.com/DuyDinhhh/Online_Recruitment_Platform_Data_Processing_and_Analysis_Engine/blob/main/assets/Architecture.png?raw=true)
+![Architecture](https://github.com/DuyDinhhh/Online_Recruitment_Platform_Data_Processing_and_Analysis_Engine/blob/main/assets/Architecturee.png?raw=true)
 
 ## **Raw data**
 
