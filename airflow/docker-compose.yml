@@ -1,0 +1,12 @@
+version: '3.0'
+services:
+  etl-pipeline-container:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /Users/nguyentadinhduy/Documents/SQL_THLONG/DE_Gen6_DataEngineering/Class8/airflow-etl/dags:/opt/airflow/dags
+      - /Users/nguyentadinhduy/spark-3.5.0-bin-hadoop3:/opt/spark
+    ports:
+      - 8080:8080
+    command: bash -c 'airflow db init && airflow users create --username admin --password admin --firstname Duy --lastname Dinh --role Admin --email duynene2004@gmail.com && airflow webserver & airflow scheduler'
