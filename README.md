@@ -6,7 +6,7 @@ This project is about creating a system to handle and make sense of the activity
 
 # **Architecture**
 
-![Architecture](https://github.com/DuyDinhhh/Online_Recruitment_Platform_Data_Processing_and_Analysis_Engine/blob/main/assets/Architecturee.png?raw=true)
+![Architecture](https://github.com/DuyDinhhh/Online_Recruitment_Platform_Data_Processing_and_Analysis_Engine/blob/main/assets/Architecture.png?raw=true)
 
 ## **Raw data**
 
@@ -99,6 +99,10 @@ root
 
 - Install Spark (used 3.5.0).
 
+**Airflow setup**
+
+- Install Airflow in Docker Compose.
+
 **Cassandra setup**
 
 - Install Cassandra.
@@ -110,4 +114,6 @@ root
 # **Get Going!**
 
 - Setup Kafka service and start sending log data from website [set up](https://github.com/DuyDinhhh/Online_Recruitment_Platform_Data_Processing_and_Analysis_Engine/blob/main/setup/kafka.md)
+- Setup Airflow to trigger the data pipeline [set up](https://github.com/DuyDinhhh/Online_Recruitment_Platform_Data_Processing_and_Analysis_Engine/blob/main/airflow/README.md)
 - Setup Grafana for data visualization Setup [set up](https://github.com/DuyDinhhh/Online_Recruitment_Platform_Data_Processing_and_Analysis_Engine/blob/main/setup/grafana.md)
+
