@@ -28,6 +28,6 @@ docker network connect my_network airflow-etl-pipeline-container-1
 **3. Setup network**
 
 ```
-Visit [http://localhost:8080](http://localhost:8080)
+Visit http://localhost:8080
 
 ```
