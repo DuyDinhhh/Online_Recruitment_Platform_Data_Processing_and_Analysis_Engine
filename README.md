@@ -2,7 +2,7 @@
 
 This project is about creating a system to handle and make sense of the activity records from a job recruitment platform. The main aim is to keep, work on, and study these records to help the company decide what to do next. It uses Kafka to organize incoming data and sends this untouched data to Cassandra, which is like a big storage space. Then, PySpark takes this data, changes it, and puts it into MySQL, where it is kept for future use. We use Grafana to make charts and graphs of the data. The whole project is set up with Docker, which makes it easier to start and run the system.
 
-- Tech stack: PySpark, Kafka, Docker, Cassandra, MySQL, Grafana, Python.
+- Tech stack: PySpark, Kafka, Airflow, Docker, Cassandra, MySQL, Grafana, Python.
 
 # **Architecture**
 
