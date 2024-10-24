@@ -7,7 +7,7 @@ from airflow.operators.python import PythonOperator, BranchPythonOperator
 dag = DAG(
     'etl_pipeline',
     description='A simple ETL pipeline DAG',
-    schedule_interval='*/2 * * * *',  # Run every 20 minutes
+    schedule_interval='*/2 * * * *',  # Run every 2 minutes
     start_date=datetime(2024, 3, 20),
     catchup=False,
 )
